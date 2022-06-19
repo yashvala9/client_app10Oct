@@ -1,10 +1,15 @@
+import 'dart:isolate';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:reel_ro/app/modules/referrals/views/referrals_view.dart';
+import 'package:reel_ro/app/modules/send_invite/views/send_invite_view.dart';
 import 'package:reel_ro/app/routes/app_page.dart';
 import 'package:reel_ro/utils/colors.dart';
 
+import 'app/modules/entry_count/views/entry_count_view.dart';
 import 'firebase_options.dart';
 
 late PackageInfo kPackageInfo;
@@ -104,8 +109,8 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
 
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.initial,
-      // home: const Root(),
+      // initialRoute: AppPages.initial,
+      home: SendInviteView(),
     );
   }
 }
