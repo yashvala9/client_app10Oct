@@ -109,8 +109,8 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.routes,
 
       debugShowCheckedModeBanner: false,
-      // initialRoute: AppPages.initial,
-      home: SendInviteView(),
+      initialRoute: AppPages.initial,
+      
     );
   }
 }
