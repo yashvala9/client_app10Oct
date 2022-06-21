@@ -5,6 +5,7 @@ class AppColors {
   static const secondary = Color(0xffFDD447);
   static const primaryContainer = Color(0xffFAF2E6);
 
+  static const whiteappbar = Color(0xffffffff);
   static const buttonColor = Color(0xffFDC440);
 
   static const headline5Color = Color(0xff2B2C43);
@@ -27,6 +28,10 @@ class AppColors {
   static const lightGrey = Color(0xffF9F9F9);
   static const lightOrange = Color(0xffFF942C);
   static const yellowOrange = Color(0xffFBA800);
+  static const darkred = Color.fromRGBO(255, 77, 103, 1);
+  static const blackAppColor = Color(0xff000000);
 
+  static const winnercardbrown = Color.fromRGBO(106, 70, 0, 1);
+  static const winnercardpink = Color.fromRGBO(203, 50, 70, 1);
   static const buttonGradiantColor = [Color(0xffFDD447), Color(0xffFDBA3C)];
 }
