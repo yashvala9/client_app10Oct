@@ -15,4 +15,11 @@ class Assets {
   static const iconUK = 'assets/UK_icon.png';
   static const winnerScreenBackground = 'assets/Background.png';
   static const winnerHeaderImage = 'assets/Rectangle 42.png';
+
+  static const entry ='assets/entry.png';
+  static const book ='assets/book.png';
+  static const badge ='assets/badge.png';
+  static const trophy ='assets/trophy.png';
+  static const referral ='assets/referral.png';
+
 }

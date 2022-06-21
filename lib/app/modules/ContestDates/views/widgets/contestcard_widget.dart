@@ -3,35 +3,35 @@ import 'package:get/get.dart';
 import 'package:reel_ro/app/data/demo_data.dart';
 import 'package:reel_ro/utils/colors.dart';
 
-class ContestCard_widget extends StatelessWidget {
-  ContestDates contestDates;
-  ContestCard_widget({Key? key, required this.contestDates}) : super(key: key);
+class ContestCard extends StatelessWidget {
+  final ContestDates contestDates;
+  const ContestCard({Key? key, required this.contestDates}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
     return Container(
       margin: const EdgeInsets.all(10),
-      height: 278,
-      width: Get.size.width * 0.7,
+      height: 270,
+      width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            Color.fromRGBO(238, 200, 101, 1),
-            Color.fromRGBO(255, 230, 84, 1),
+            Color(0xffEEC865),
+            Color(0xffFFE654),
           ],
         ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(contestDates.title ?? '--',
-              style: TextStyle(
-                fontSize: 20,
-                color: AppColors.winnercardbrown,
-              )),
+          Text(contestDates.title ?? '--', style: style.titleLarge!.copyWith(
+            color: AppColors.winnercardbrown
+          )),
           Image.network(
             contestDates.imageurl ?? 'http://via.placeholder.com/640x360',
             fit: BoxFit.cover,
@@ -43,28 +43,21 @@ class ContestCard_widget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text('Prize',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: AppColors.winnercardbrown,
-                    fontWeight: FontWeight.bold,
-                  )),
+                  style: style.titleLarge),
               const SizedBox(width: 10),
               Text(
                 contestDates.prize ?? '--',
-                style: TextStyle(
-                  fontSize: 24,
+                style: style.headline5!.copyWith(
                   color: AppColors.winnercardpink,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
           Text(
             'Contest ends on ${contestDates.endOn}',
-            style: TextStyle(
-              fontSize: 21,
-              color: AppColors.winnercardbrown,
-            ),
+            style: style.titleMedium!.copyWith(
+              fontWeight: FontWeight.w600,
+            )
           ),
         ],
       ),

@@ -6,8 +6,12 @@ import 'package:reel_ro/utils/colors.dart';
 import '../controllers/contest_rules_controller.dart';
 
 class ContestRulesView extends GetView<ContestRulesController> {
+  const ContestRulesView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
     Get.put(ContestRulesController());
     return Scaffold(
         appBar: AppBar(
@@ -24,14 +28,15 @@ class ContestRulesView extends GetView<ContestRulesController> {
               )),
         ),
         body: Obx(
-          () => controller.isLoading == false
+          () => !controller.isLoading.value
               ? ListView.builder(
                   shrinkWrap: true,
                   physics: const ClampingScrollPhysics(),
                   itemCount: controller.contestRulesList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
-                      margin: const EdgeInsets.all(15),
+                      margin: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         gradient: const LinearGradient(
@@ -43,29 +48,35 @@ class ContestRulesView extends GetView<ContestRulesController> {
                           ],
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              controller.contestRulesList[index].title.toString(),
-                              style: const TextStyle(color: AppColors.winnercardbrown, fontSize: 18),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            controller.contestRulesList[index].title.toString(),
+                            style: style.titleLarge!.copyWith(
+                              color: AppColors.winnercardbrown,
+                              fontWeight: FontWeight.w600,
                             ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            ListView.builder(
-                              physics: const ClampingScrollPhysics(),
-                              shrinkWrap: true,
-                              itemCount: controller.contestRulesList[index].rules!.length,
-                              itemBuilder: (BuildContext context, int index1) {
-                                return Text(controller.contestRulesList[index].rules!.cast().values.elementAt(index1).toString());
-                              },
-                            )
-                          ],
-                        ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          ListView.builder(
+                            physics: const ClampingScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: controller
+                                .contestRulesList[index].rules!.length,
+                            itemBuilder: (BuildContext context, int index1) {
+                              return Text(controller
+                                  .contestRulesList[index].rules!
+                                  .cast()
+                                  .values
+                                  .elementAt(index1)
+                                  .toString());
+                            },
+                          )
+                        ],
                       ),
                     );
                   },

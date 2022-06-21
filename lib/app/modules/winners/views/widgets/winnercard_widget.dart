@@ -4,19 +4,21 @@ import 'package:reel_ro/app/data/demo_data.dart';
 import 'package:reel_ro/utils/colors.dart';
 
 class WinnerCardWidget extends StatelessWidget {
-  WinnerList winnerList;
-  WinnerCardWidget({
+  final WinnerList winnerList;
+  const WinnerCardWidget({
     Key? key,
     required this.winnerList,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
     return Container(
+        height: 223,
+        width: double.infinity,
         padding: const EdgeInsets.all(8.0),
         margin: const EdgeInsets.all(12.0),
-        height: 223,
-        width: Get.size.width,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(
               Radius.circular(15),
@@ -32,17 +34,14 @@ class WinnerCardWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(winnerList.title!,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: AppColors.winnercardbrown,
-                )),
+            Text(
+              winnerList.title!,
+              style: style.subtitle1,
+            ),
             Text(
               winnerList.prize!,
-              style: TextStyle(
-                fontSize: 24,
+              style: style.titleLarge!.copyWith(
                 color: AppColors.winnercardpink,
-                fontWeight: FontWeight.bold,
               ),
             ),
             Container(
@@ -64,9 +63,7 @@ class WinnerCardWidget extends StatelessWidget {
                   ),
                   Text(
                     winnerList.userName!,
-                    style: TextStyle(
-                      fontSize: 18,
-                    ),
+                    style: style.subtitle1
                   ),
                 ],
               ),

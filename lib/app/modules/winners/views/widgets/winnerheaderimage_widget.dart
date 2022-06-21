@@ -11,45 +11,30 @@ class WinnerHeaderImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
     return Container(
-      padding: const EdgeInsets.all(8.0),
-      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(
+        bottom: 12,
+      ),
+      margin: const EdgeInsets.all(8.0),
       height: 223,
-      width: Get.size.width,
+      width: double.infinity,
+      alignment: Alignment.bottomCenter,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(15),
+          Radius.circular(1),
+        ),
+        image: DecorationImage(
+          image: AssetImage(Assets.winnerHeaderImage),
         ),
       ),
-      child: Stack(
-        children: [
-          Image.asset(Assets.winnerHeaderImage),
-          Positioned(
-            bottom: 0,
-            // left: Get.width * 0.5,
-            child: Container(
-              padding: const EdgeInsets.only(bottom: 12),
-              width: Get.size.width,
-              child: Center(
-                child: Text(
-                  'Mega Prize Winner',
-                  style: TextStyle(
-                    fontSize: 28,
-                    color: AppColors.whiteappbar,
-                    fontWeight: FontWeight.bold,
-                    shadows: const <Shadow>[
-                      Shadow(
-                        offset: Offset(2.0, 2.0),
-                        blurRadius: 10.0,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
+      child: Text(
+        'Mega Prize Winner',
+        style: style.headline5!.copyWith(
+          color: AppColors.whiteappbar,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }

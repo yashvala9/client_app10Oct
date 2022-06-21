@@ -6,9 +6,12 @@ import '../controllers/contest_dates_controller.dart';
 import 'widgets/contestcard_widget.dart';
 
 class ContestDatesView extends GetView<ContestDatesController> {
+  ContestDatesView({Key? key}) : super(key: key);
+  final _controller = Get.put<ContestDatesController>(ContestDatesController());
   @override
   Widget build(BuildContext context) {
-    Get.put<ContestDatesController>(ContestDatesController());
+    final theme = Theme.of(context);
+    final style = theme.textTheme;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -24,11 +27,11 @@ class ContestDatesView extends GetView<ContestDatesController> {
             )),
       ),
       body: Center(
-        child: Obx(() => controller.isLoading == false
+        child: Obx(() => !controller.isLoading.value
             ? ListView.builder(
                 itemCount: controller.contestDatesList.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return ContestCard_widget(
+                  return ContestCard(
                     contestDates: controller.contestDatesList[index],
                   );
                 },

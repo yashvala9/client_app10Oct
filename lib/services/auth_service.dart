@@ -8,7 +8,7 @@ class AuthService extends GetxService {
   Future<void> redirectUser() async {
     var user = _authRepo.user;
     if (user == null) {
-      Get.offAllNamed(AppRoutes.getStarted);
+      Get.offAllNamed(AppRoutes.giveaway);
     } else {
       Get.offAllNamed(AppRoutes.home);
     }
