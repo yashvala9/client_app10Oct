@@ -33,5 +33,8 @@ class AppColors {
 
   static const winnercardbrown = Color.fromRGBO(106, 70, 0, 1);
   static const winnercardpink = Color.fromRGBO(203, 50, 70, 1);
+
+  static const contestrulesbrown = Color(0xffffeab4);
+  static const contestrulesligthbrown = Color(0xffc9bd9e);
   static const buttonGradiantColor = [Color(0xffFDD447), Color(0xffFDBA3C)];
 }

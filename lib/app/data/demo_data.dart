@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
 
 class DemoData {
-  static String winnerHeaderImage = 'assets/Rectangle 42.png';
-
   static List<WinnerList> demoWinnerList = [
     WinnerList(
       imageurl:
@@ -42,6 +40,34 @@ class DemoData {
       prize: 'iPhone 13',
     ),
   ];
+
+  static List<ContestRules> demoContestRules = [
+    ContestRules(
+      title: 'May Ads Contest Winner',
+      rules: {
+        "1": "1. Lorem ipsum dolor sit amet, consectetur ",
+        "2": "2. adipiscing elit. Sed vel mauris eget tortor ",
+        "3": "3. ultricies pulvinar fames. Rhoncus nec id ",
+        "4": "4.fringilla quam molestie lobortis sed.",
+        "5": " 5.Praesent tempor ut cras vestibulum, enim",
+        "6": "6.sagittis, aliquet dui pellentesque. Massa duis",
+        "7": "7.risus egestas orci placerat ipsum donec purus."
+      },
+    ),
+    ContestRules(
+      title: 'Mega Contest Rules',
+      rules: {
+        "1": "1. Lorem ipsum dolor sit amet, consectetur ",
+        "2": "2. adipiscing elit. Sed vel mauris eget tortor ",
+        "3": "3. ultricies pulvinar fames. Rhoncus nec id ",
+        "4": "4.fringilla quam molestie lobortis sed.",
+        "5": " 5.Praesent tempor ut cras vestibulum, enim",
+        "6": "6.sagittis, aliquet dui pellentesque. Massa duis",
+        "7": "7.risus egestas orci placerat ipsum donec purus.",
+        "8": "8.tempor ut cras vestibulum, enim sagittis, aliquet dui pellentesque.",
+      },
+    ),
+  ];
 }
 
 class WinnerList {
@@ -69,5 +95,15 @@ class ContestDates {
     this.endOn,
     this.title,
     this.prize,
+  });
+}
+
+class ContestRules {
+  String? title;
+  Map<String, String>? rules;
+
+  ContestRules({
+    this.title,
+    this.rules,
   });
 }

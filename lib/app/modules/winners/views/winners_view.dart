@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:reel_ro/utils/assets.dart';
 import 'package:reel_ro/utils/colors.dart';
 
 import '../../../data/demo_data.dart';
@@ -31,7 +32,7 @@ class WinnersView extends GetView<WinnersController> {
         height: Get.height,
         child: Stack(
           children: [
-            Center(child: Image.asset('assets/Background.png', fit: BoxFit.none, width: Get.width, height: Get.height)),
+            Center(child: Image.asset(Assets.winnerScreenBackground, fit: BoxFit.none, width: Get.width, height: Get.height)),
             Column(
               children: [
                 const WinnerHeaderImage(),

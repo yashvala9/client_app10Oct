@@ -13,4 +13,6 @@ class Assets {
   static const googleIcon = 'assets/icon-google.png';
   static const lockImage = 'assets/Lock.png';
   static const iconUK = 'assets/UK_icon.png';
+  static const winnerScreenBackground = 'assets/Background.png';
+  static const winnerHeaderImage = 'assets/Rectangle 42.png';
 }
