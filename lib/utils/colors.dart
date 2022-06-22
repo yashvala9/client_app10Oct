@@ -19,11 +19,21 @@ class AppColors {
   static const tablehead = Color(0xffF6DC9D);
 
   static const buttonTextColor = Color(0xff030200);
+  static const buttonTextColor2 = Color(0xff2E3E5C);
 
   static const textFiledColor = Color(0xffF0F2F6);
   static const scaffoldGradiantColor = [Color(0xffFFEAB4), Color(0xffFFD669)];
   static const containerGradiantColor = [Color(0xffFFEAB4), Color(0xffFFEDBC)];
   static const pokeGradiantColor = [Color(0xffFDB62C), Color(0xffFFD27B)];
+  static const textFieldColor = Color(0xffF0F2F6);
+
+  static const labelLarge = Color(0xff393F45);
+  static const lightGreen = Color(0xff1FD85F);
+  static const borderColor = Color(0xffE9E9E9);
+  static const lightBlack = Color(0xff1C1C1C);
+  static const lightGrey = Color(0xffF9F9F9);
+  static const lightOrange = Color(0xffFF942C);
+  static const yellowOrange = Color(0xffFBA800);
 
   static const buttonGradiantColor = [Color(0xffFDD447), Color(0xffFDBA3C)];
 }
