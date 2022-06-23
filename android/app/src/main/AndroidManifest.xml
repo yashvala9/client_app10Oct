@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.reel_ro">
+    package="com.reelro.reel_ro.reel_ro">
    <application
         android:label="reel_ro"
         android:name="${applicationName}"
